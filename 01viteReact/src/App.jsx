@@ -7,11 +7,12 @@ import Card from './components/Card.jsx'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <Card />  
+      <Card title = {"First Card"} description = {"This is first card of the container."} />
+      <Card title = {"Second Card"} description = {"This is second card of the container."} />
+      <Card title = {"Third Card"} description = {"This is third card of the container."} />  
     </>
   )
 }

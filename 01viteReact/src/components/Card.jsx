@@ -1,44 +1,46 @@
+import { useState } from "react";
 
+function Card({title , description = "Defualt description"}){
 
-function Card(){
+    // Creating a useState hook for updating count button value.
+    let [count , setCount] = useState(0);
+
     return(
         <>
-            <article class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
-                <div class="flex items-start sm:gap-8">
+            {/* I am writing this comment to just check the theme */}
+            <article className="rounded-xl bg-white p-1 ring ring-indigo-50 sm:p-1 lg:p-3 mb-3">
+                <div className="flex items-start sm:gap-8">
                     <div
-                    class="hidden sm:grid sm:size-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-indigo-500"
+                    className="hidden sm:grid sm:size-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-indigo-500"
                     aria-hidden="true"
                     >
-                    <div class="flex items-center gap-1">
-                        <span class="h-8 w-0.5 rounded-full bg-indigo-500"></span>
-                        <span class="h-6 w-0.5 rounded-full bg-indigo-500"></span>
-                        <span class="h-4 w-0.5 rounded-full bg-indigo-500"></span>
-                        <span class="h-6 w-0.5 rounded-full bg-indigo-500"></span>
-                        <span class="h-8 w-0.5 rounded-full bg-indigo-500"></span>
+                    <div className="flex items-center gap-1">
+                        <span className="h-8 w-0.5 rounded-full bg-indigo-500"></span>
+                        <span className="h-6 w-0.5 rounded-full bg-indigo-500"></span>
+                        <span className="h-4 w-0.5 rounded-full bg-indigo-500"></span>
+                        <span className="h-6 w-0.5 rounded-full bg-indigo-500"></span>
+                        <span className="h-8 w-0.5 rounded-full bg-indigo-500"></span>
                     </div>
                     </div>
-
+                    
                     <div>
-                    <strong
-                        class="rounded border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white"
-                    >
-                        Episode #101
-                    </strong>
 
-                    <h3 class="mt-4 text-lg font-medium sm:text-xl">
-                        <a href="#" class="hover:underline"> Some Interesting Podcast Title </a>
+                    <h3 className="mt-4 text-lg font-medium sm:text-xl ">
+                        <a href="#" className="hover:underline"> {title} </a>
                     </h3>
 
-                    <p class="mt-1 text-sm text-gray-700">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam nulla amet voluptatum sit
+                    <p className="mt-1 text-sm text-gray-700">
+                        {description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam nulla amet voluptatum sit
                         rerum, atque, quo culpa ut necessitatibus eius suscipit eum accusamus, aperiam voluptas
-                        exercitationem facere aliquid fuga. Sint.
+                        exercitationem facere aliquid fuga. Sint. 
                     </p>
 
-                    <div class="mt-4 sm:flex sm:items-center sm:gap-2">
-                        <div class="flex items-center gap-1 text-gray-500">
+                    <button className = "mt-5 p-2 rounded-3xl bg-blue-600 text-white" onClick={() => {setCount(count+1)} }>Click Count {count}</button>
+
+                    <div className="mt-4 sm:flex sm:items-center sm:gap-2">
+                        <div className="flex items-center gap-1 text-gray-500">
                         <svg
-                            class="size-4"
+                            className="size-4"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -52,15 +54,15 @@ function Card(){
                             ></path>
                         </svg>
 
-                        <p class="text-xs font-medium">48:32 minutes</p>
+                        <p className="text-xs font-medium">48:32 minutes</p>
                         </div>
 
-                        <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+                        <span className="hidden sm:block" aria-hidden="true">&middot;</span>
 
-                        <p class="mt-2 text-xs font-medium text-gray-500 sm:mt-0">
-                        Featuring <a href="#" class="underline hover:text-gray-700">Barry</a>,
-                        <a href="#" class="underline hover:text-gray-700">Sandra</a> and
-                        <a href="#" class="underline hover:text-gray-700">August</a>
+                        <p className="mt-2 text-xs font-medium text-gray-500 sm:mt-0">
+                        Featuring <a href="#" className="underline hover:text-gray-700">Barry</a>,
+                        <a href="#" className="underline hover:text-gray-700">Sandra</a> and
+                        <a href="#" className="underline hover:text-gray-700">August</a>
                         </p>
                     </div>
                     </div>
